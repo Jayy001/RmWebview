@@ -10,7 +10,7 @@ turbo = Turbo(app)
 
 @app.context_processor
 def inject_load():
-    svg = rm2svg("86bdb7f5-3477-4815-a877-9083118c01fa.rm")
+    svg = rm2svg("~/.local/share/remarkable/xochitl/8b3e8d9b-2bb5-429a-ab5f-6ca89a50ef1f/86bdb7f5-3477-4815-a877-9083118c01fa.rm")
     return {'load1': Markup(svg), 'load5': random.randint(1,100), 'load15': random.randint(1,100)}
 
 @app.route('/')
@@ -24,7 +24,7 @@ def before_first_request():
 def update_load():
     with app.app_context():
         while True:
-            time.sleep(0.2)
+            time.sleep(2)
             print("checking for changes")
             turbo.push(turbo.replace(render_template('loadavg.html'), 'load'))
 
