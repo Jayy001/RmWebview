@@ -10,7 +10,7 @@ turbo = Turbo(app)
 
 @app.context_processor
 def inject_load():
-    svg = rm2svg(r"/home/root/local/share/remarkable/xochitl/8b3e8d9b-2bb5-429a-ab5f-6ca89a50ef1f/86bdb7f5-3477-4815-a877-9083118c01fa.rm")
+    svg = rm2svg(r"/home/root/.local/share/remarkable/xochitl/8b3e8d9b-2bb5-429a-ab5f-6ca89a50ef1f/86bdb7f5-3477-4815-a877-9083118c01fa.rm")
     return {'load1': Markup(svg), 'load5': random.randint(1,100), 'load15': random.randint(1,100)}
 
 @app.route('/')
