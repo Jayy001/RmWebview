@@ -24,7 +24,7 @@ def before_first_request():
 def update_load():
     with app.app_context():
         while True:
-            time.sleep(2)
+            time.sleep(0.2)
             print("checking for changes")
             turbo.push(turbo.replace(render_template('loadavg.html'), 'load'))
 
